@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    .slidercontainer {
+      width: 100%;
+    }
+    /* The slider itself */
+    .slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 15px;
+      border-radius: 5px;
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+    }
+
+    .slider:hover {
+      opacity: 1
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #4CAF50;
+      cursor: pointer;
+    }
+    .slider::-moz-range-thumb {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #4CAF50;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body style="width: 400px">
+  <div>
+    <h1>Custom Background</h1>
+  </div>
+  <!-- upload and show background image -->
+  <div>
+    <p>select background image</p>
+    <input id="file" type="file" />
+  </div>
+  <!-- customize background image opacity -->
+  <div>
+    <p>select opacity</p>
+    <div class="slidercontainer">
+      <input id="opacity" type="range" min="0" max="100" value="20" class="slider" />
+    </div>
+  </div>
+  <!-- customize background-* property -->
+  <div>
+    <p>select image property</p>
+    <select id="property">
+      <option value="auto" selected="selected">default</option>
+      <option value="cover">cover</option>
+      <option value="fit">fit</option>
+    </select>
+  </div>
+</body>
+<script src="popup.js"></script>
+
+</html>

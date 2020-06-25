@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "chatwork custom background",
+  "version": "1.2.2",
+  "author": "Naohiro Iwamoto",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_title": "Custom Background",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.chatwork.com/*", "https://kcw.kddi.ne.jp/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": ["storage", "declarativeContent", "activeTab"]
+}
